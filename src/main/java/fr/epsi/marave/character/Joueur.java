@@ -1,15 +1,16 @@
 package fr.epsi.marave.character;
 
+import fr.epsi.marave.utils.RandomUtil;
+
 public class Joueur extends Personnage {
 
     private int level = 0;
 
-    public Joueur(int strength, int maxHealth, int armor, int health) {
-        super(strength, maxHealth, armor, health);
+    public Joueur(int strength, int armor, int health) {
+        super(strength, armor, health);
     }
 
-    @Override
-    public void attack(Personnage enemy) {
-
+    public int getLevel() {
+        return level;
     }
 }

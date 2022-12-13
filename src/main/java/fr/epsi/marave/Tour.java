@@ -5,8 +5,8 @@ import fr.epsi.marave.events.Event;
 import fr.epsi.marave.events.EventFactory;
 
 public class Tour {
-    private Event event;
-    private Joueur joueur;
+    private final Event event;
+    private final Joueur joueur;
 
     public Tour(Joueur joueur) {
         this.joueur = joueur;
@@ -14,6 +14,8 @@ public class Tour {
     }
 
     public void start() {
+        System.out.println("Vos stats");
+        System.out.println(joueur.getCaracteristique());
         event.launch(this.joueur);
     }
 }
