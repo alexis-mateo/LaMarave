@@ -6,5 +6,6 @@ public class RencontreMaitreArme implements Event {
     @Override
     public void launch(Joueur joueur) {
         System.out.println("Rencontre avec le maitre");
+        joueur.levelUp();
     }
 }

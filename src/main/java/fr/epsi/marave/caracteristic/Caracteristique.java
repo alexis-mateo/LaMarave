@@ -42,7 +42,7 @@ public class Caracteristique {
     }
 
     public void setHealth(int health) {
-        this.health = health;
+        this.health = Math.min(health, this.maxHealth);
     }
 
     @Override

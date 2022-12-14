@@ -19,9 +19,13 @@ public abstract class Personnage {
 
     public void attack(Personnage enemy) {
         int des12 = RandomUtil.randomInt(1, 12);
-        int newEnemyHealth = enemy.getCaracteristique().getHealth() -
-                (des12 + this.getCaracteristique().getStrength() - enemy.getCaracteristique().getArmor());
-        enemy.getCaracteristique().setHealth(newEnemyHealth);
+        int dgt = des12 + this.getCaracteristique().getStrength() - enemy.getCaracteristique().getArmor();
+        if(dgt > 0) {
+            int newEnemyHealth = enemy.getCaracteristique().getHealth() - dgt;
+            enemy.getCaracteristique().setHealth(newEnemyHealth);
+        }
+        System.out.println("Resultat De12 : " + des12);
+        System.out.println("Dgt Atq : " + dgt);
     }
 }
 
