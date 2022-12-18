@@ -1,8 +1,8 @@
 package fr.epsi.marave.events;
 
-import fr.epsi.marave.character.Joueur;
+import fr.epsi.marave.character.Player;
 import fr.epsi.marave.character.Mob;
-import fr.epsi.marave.character.Personnage;
+import fr.epsi.marave.character.Character;
 import fr.epsi.marave.utils.RandomUtil;
 
 public class Combat implements Event {
@@ -15,18 +15,20 @@ public class Combat implements Event {
     }
 
     @Override
-    public void launch(Joueur joueur) {
-        Personnage mob = new Mob(joueur.getLevel());
+    public void launch(Player player) {
+        Character mob = new Mob(player.getLevel());
         System.out.println("Stats du mob");
         System.out.println(mob.getCaracteristique());
         System.out.println((isPlayerAttack ? "Joueur" : "Mob") + " commence");
 
-        while (mob.getCaracteristique().getHealth() > 0 && joueur.getCaracteristique().getHealth() > 0) {
+        while (mob.getCaracteristique().getHealth() > 0 && player.getCaracteristique().getHealth() > 0) {
             if(isPlayerAttack) {
-                joueur.attack(mob);
+                System.out.println("Au tour du joueur");
+                player.attack(mob);
                 isPlayerAttack = false;
             } else {
-                mob.attack(joueur);
+                System.out.println("Au tour du mob");
+                mob.attack(player);
                 isPlayerAttack = true;
             }
         }

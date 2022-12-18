@@ -1,7 +1,7 @@
 package fr.epsi.marave.levelup;
 
-import fr.epsi.marave.character.Joueur;
+import fr.epsi.marave.character.Player;
 
 public interface LevelUpManager {
-    void levelUp(Joueur joueur);
+    void levelUp(Player player);
 }

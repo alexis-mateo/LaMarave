@@ -1,7 +1,7 @@
 package fr.epsi.marave.events;
 
-import fr.epsi.marave.character.Joueur;
+import fr.epsi.marave.character.Player;
 
 public interface Event {
-    void launch(Joueur joueur);
+    void launch(Player player);
 }

@@ -1,12 +1,12 @@
 package fr.epsi.marave.events;
 
-import fr.epsi.marave.character.Joueur;
+import fr.epsi.marave.character.Player;
 
 public class RencontreMerlin implements Event {
 
     @Override
-    public void launch(Joueur joueur) {
+    public void launch(Player player) {
         System.out.println("Rencontre avec merlin !");
-        joueur.getCaracteristique().setHealth(joueur.getCaracteristique().getMaxHealth());
+        player.getCaracteristique().setHealth(player.getCaracteristique().getMaxHealth());
     }
 }

@@ -1,6 +1,6 @@
 package fr.epsi.marave.character;
 
-public class Mob extends Personnage {
+public class Mob extends Character {
 
     private static final int BASE_MOB_ARMOR = 12;
     private static final int BASE_MOB_STRENGTH = 12;
