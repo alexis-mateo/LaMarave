@@ -57,7 +57,7 @@ public class OutputMessageUtils {
         System.out.println("Tour " + (currentTurn) + "/" + maxTurns);
     }
 
-    public static void pressTouchToContinue(){
+    public static void pressKeyToContinue(){
         System.out.println("\nAppuyez sur une touche pour continuer...");
         ReadInput.readLine();
         System.out.println();

@@ -35,7 +35,7 @@ public class Partie {
             OutputMessageUtils.numberOfTurn(currentTurn, MAX_TURNS);
             turn.start();
 
-            OutputMessageUtils.pressTouchToContinue();
+            OutputMessageUtils.pressKeyToContinue();
             currentTurn++;
         }
     }
