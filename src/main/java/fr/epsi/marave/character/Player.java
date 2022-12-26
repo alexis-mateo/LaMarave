@@ -7,7 +7,7 @@ import fr.epsi.marave.utils.ReadInput;
 
 public class Player extends Character {
 
-    private int level = 0;
+    private int level = 1;
     private final LevelUpManager lvlUpManager = new PlayerLevelUp();
 
     public Player(String name, int strength, int armor, int health) {

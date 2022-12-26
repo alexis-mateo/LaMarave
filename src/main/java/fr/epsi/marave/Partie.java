@@ -38,5 +38,11 @@ public class Partie {
             OutputMessageUtils.pressKeyToContinue();
             currentTurn++;
         }
+
+        if (currentTurn > MAX_TURNS){
+            OutputMessageUtils.victory();
+        } else {
+            OutputMessageUtils.defeat();
+        }
     }
 }

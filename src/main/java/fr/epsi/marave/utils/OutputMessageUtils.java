@@ -131,4 +131,13 @@ public class OutputMessageUtils {
         System.out.println("\nSuite à ce cet entretien avec Merlin, vous ne le comprenez toujours pas,\n" +
                 "mais vous vous êtes totalement revigoré !\n");
     }
+
+    public static void victory() {
+        System.out.println("Malgré votre longue et tumultueuse quête, vous n'êtes pas parvenu à trouver le Graal." +
+                "Vous décidez donc de retourner au château et de profiter d'un bon bain !");
+    }
+
+    public static void defeat() {
+        System.out.println("Vous avez succombé avant d'avoir pu finir votre quête du Graal...");
+    }
 }
