@@ -7,15 +7,13 @@ import fr.epsi.marave.utils.OutputMessageUtils;
 
 public class Turn {
     private final Event event;
-    private final Player player;
 
-    public Turn(Player player) {
-        this.player = player;
+    public Turn() {
         this.event = EventFactory.buildEvent();
     }
 
-    public void start() {
+    public void start(Player player) {
         OutputMessageUtils.displayCharacterStats(player);
-        event.launch(this.player);
+        event.launch(player);
     }
 }

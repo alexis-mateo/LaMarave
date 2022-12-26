@@ -31,9 +31,9 @@ public class Partie {
 
     public void start() {
         while (currentTurn <= MAX_TURNS && this.player.getCaracteristique().getHealth() > 0) {
-            Turn turn = new Turn(this.player);
+            Turn turn = new Turn();
             OutputMessageUtils.numberOfTurn(currentTurn, MAX_TURNS);
-            turn.start();
+            turn.start(this.player);
 
             OutputMessageUtils.pressKeyToContinue();
             currentTurn++;
