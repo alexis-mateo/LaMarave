@@ -1,8 +1,8 @@
 package fr.epsi.marave;
 
 import fr.epsi.marave.character.Player;
-
-import java.util.Scanner;
+import fr.epsi.marave.utils.OutputMessageUtils;
+import fr.epsi.marave.utils.ReadInput;
 
 public class Partie {
     private static final int MAX_TURNS = 20;
@@ -16,7 +16,11 @@ public class Partie {
 
 
     public Partie() {
+        OutputMessageUtils.debutDePartie();
+        String name = ReadInput.readLine();
+
         this.player = new Player(
+                name,
                 DEFAULT_STRENGTH,
                 DEFAULT_ARMOR,
                 DEFAULT_HEALTH
@@ -26,15 +30,12 @@ public class Partie {
     }
 
     public void start() {
-        Scanner scan = new Scanner(System.in);
         while (currentTurn <= MAX_TURNS && this.player.getCaracteristique().getHealth() > 0) {
             Turn turn = new Turn(this.player);
-            System.out.println("Tour " + (currentTurn) + "/" + MAX_TURNS);
+            OutputMessageUtils.numberOfTurn(currentTurn, MAX_TURNS);
             turn.start();
 
-            System.out.println("\nAppuyez sur une touche pour continuer...");
-            scan.nextLine();
-            System.out.println();
+            OutputMessageUtils.pressTouchToContinue();
             currentTurn++;
         }
     }
