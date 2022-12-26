@@ -3,6 +3,7 @@ package fr.epsi.marave;
 import fr.epsi.marave.character.Player;
 import fr.epsi.marave.events.Event;
 import fr.epsi.marave.events.EventFactory;
+import fr.epsi.marave.utils.OutputMessageUtils;
 
 public class Turn {
     private final Event event;
@@ -14,9 +15,7 @@ public class Turn {
     }
 
     public void start() {
-        System.out.println("Votre level: " + player.getLevel());
-        System.out.println("Vos stats");
-        System.out.println(player.getCaracteristique() + "\n");
+        OutputMessageUtils.displayCharacterStats(player);
         event.launch(this.player);
     }
 }

@@ -2,15 +2,16 @@ package fr.epsi.marave.character;
 
 import fr.epsi.marave.levelup.PlayerLevelUp;
 import fr.epsi.marave.levelup.LevelUpManager;
+import fr.epsi.marave.utils.OutputMessageUtils;
 import fr.epsi.marave.utils.ReadInput;
 
 public class Player extends Character {
 
-    private int level = 0;
+    private int level = 1;
     private final LevelUpManager lvlUpManager = new PlayerLevelUp();
 
-    public Player(int strength, int armor, int health) {
-        super(strength, armor, health);
+    public Player(String name, int strength, int armor, int health) {
+        super(name, strength, armor, health);
     }
 
     public int getLevel() {
@@ -22,10 +23,10 @@ public class Player extends Character {
     }
 
     public void addAdditionalStats(int maxStatPoints) {
-        int total;
+        int pointsAwarded;
 
         do {
-            System.out.println("Vous avez " + maxStatPoints + " à répartir: ");
+            OutputMessageUtils.addAdditionalStats(maxStatPoints);
 
             int armor = ReadInput.readInt("armor : ");
             this.getCaracteristique().setArmor(this.getCaracteristique().getArmor() + armor);
@@ -36,13 +37,13 @@ public class Player extends Character {
             int health = ReadInput.readInt("health : ");
             this.getCaracteristique().setMaxHealth(this.getCaracteristique().getMaxHealth() + health);
 
-            total = armor + strength + health;
+            pointsAwarded = armor + strength + health;
 
-            if(total > maxStatPoints) {
-                System.out.println("Trop de point attribués\n");
+            if(pointsAwarded != maxStatPoints) {
+                OutputMessageUtils.addAdditionalStatsError(pointsAwarded, maxStatPoints);
             }
-        } while (total > maxStatPoints);
-
+        } while (pointsAwarded != maxStatPoints);
+        System.out.println();
     }
 
     public void levelUp() {

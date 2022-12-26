@@ -9,7 +9,7 @@ public class EventFactory {
         if(proba <= 50) {
             return new Combat();
         } else if (proba <= 75) {
-            return new RencontreMaitreArme();
+            return new RencontreMaitreDArme();
         } else {
             return new RencontreMerlin();
         }
